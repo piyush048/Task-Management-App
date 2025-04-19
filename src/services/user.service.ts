@@ -18,3 +18,8 @@ export const updateUser = async (id: string, data: IUser): Promise<IUser | null>
   const user = await userModel.findByIdAndUpdate(id, data, { new: true }).select('-password');
   return user;
 };
+
+// for sending email
+export const getUserById = async (id: string): Promise<IUser | null> => {
+  return await userModel.findById(id);
+};

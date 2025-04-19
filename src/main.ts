@@ -4,7 +4,8 @@ import swaggerUi from "swagger-ui-express";
 import dotenv from "dotenv";
 dotenv.config();
 import { Authrouter, projectRouter, taskRouter, UserRouter } from "./routes";
-import { connectDB, redisClient, logger, connectRabbitMQ, swaggerSpec} from "./config";
+import { connectDB, redisClient, logger, connectRabbitMQ, swaggerSpec, consumeTaskQueue} from "./config";
+import { initializeMailer } from "./notifications";
 
 const app = express();
 app.use(express.json());
@@ -22,7 +23,9 @@ const startServer = async (): Promise<void> => {
   try {
     await connectDB();          
     await redisClient.connect(); 
-    await connectRabbitMQ();   
+    await connectRabbitMQ();  
+    consumeTaskQueue(); 
+    initializeMailer();
     app.listen(PORT, () => {
       logger.info(`Server running on http://localhost:${PORT}`);
       logger.info(`Swagger docs at http://localhost:${PORT}/api-docs`);

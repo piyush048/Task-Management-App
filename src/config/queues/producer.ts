@@ -1,5 +1,5 @@
 import amqp from 'amqplib';
-import { logger } from './logger';
+import { logger } from '../logger';
 
 let channel: amqp.Channel;
 
@@ -18,14 +18,19 @@ export const connectRabbitMQ = async (): Promise<void> => {
 };
 
 export const publishToQueue = async (queue: string, data: any) => {
-  // if (!channel) return;
-  // channel.sendToQueue(queue, Buffer.from(JSON.stringify(data)));
 
   if (!channel) {
     logger.error('RabbitMQ channel is not established', new Error().stack);
     throw new Error('RabbitMQ channel is not established');
   }
-
-  await channel.assertQueue(queue, { durable: true });
-  channel.sendToQueue(queue, Buffer.from(JSON.stringify(data)), { persistent: true });
+  try{
+    await channel.assertQueue(queue, { durable: true });
+    channel.sendToQueue(queue, Buffer.from(JSON.stringify(data)), { persistent: true });
+    logger.info(`Published message to queue ${queue}`);
+  }
+  catch (error) {
+    logger.error('Error publishing to RabbitMQ:', error);
+    throw error;
+  }
+  
 };

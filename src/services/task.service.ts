@@ -43,7 +43,7 @@ export const deleteTask = async (id: string): Promise<ITask | null> => {
   const deleted = await Task.findByIdAndDelete(id);
   if (deleted) {
     await redisClient.del(`task:${id}`);
-    publishToQueue('task_logs', { type: 'TASK_DELETED', data: deleted });
+    // publishToQueue('task_logs', { type: 'TASK_DELETED', data: deleted });
   }
   return deleted;
 };

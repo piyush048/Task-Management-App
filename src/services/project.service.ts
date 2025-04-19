@@ -15,7 +15,7 @@ export const createProject = async (data: Partial<IProject>): Promise<IProject> 
 
   await redisClient.set(`project:${saved._id}`, JSON.stringify(saved));
   logger.info('Project saved in Redis');
-  publishToQueue('project_logs', { type: 'PROJECT_CREATED', data: saved });
+  // publishToQueue('project_logs', { type: 'PROJECT_CREATED', data: saved });
   
   return saved;
 };
@@ -38,10 +38,10 @@ export const updateProject = async (id: string, updates: Partial<IProject>): Pro
   const updated = await Project.findByIdAndUpdate(id, updates, { new: true });
   await updateRedisProject(`project:${id}`,updates);
   logger.info('Project updated in Redis');
-  if (updated) {
+  // if (updated) {
     
-    publishToQueue('project_logs', { type: 'PROJECT_UPDATED', data: updated });
-  }
+  //   publishToQueue('project_logs', { type: 'PROJECT_UPDATED', data: updated });
+  // }
   return updated;
 };
 
@@ -50,7 +50,7 @@ export const deleteProject = async (id: string): Promise<IProject | null> => {
   if (deleted) {
     await redisClient.del(`project:${id}`);
     logger.info('Project deleted from Redis');
-    publishToQueue('project_logs', { type: 'PROJECT_DELETED', data: deleted });
+    // publishToQueue('project_logs', { type: 'PROJECT_DELETED', data: deleted });
   }
   return deleted;
 };
