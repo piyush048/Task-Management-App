@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as controller from '../controllers';
-import {authMiddleware, isAdmin, validate} from '../middlewares';
-import { createTaskSchema, updateTaskSchema } from '../validations';
+import * as controller from '@/controllers';
+import {authMiddleware, isAdmin, validate} from '@/middlewares';
+import { createTaskSchema, updateTaskSchema } from '@/validations';
 
 
 const taskRouter = Router();

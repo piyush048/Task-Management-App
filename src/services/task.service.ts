@@ -1,6 +1,6 @@
-import { Task, ITask } from '../models';
-import { redisClient, logger, publishToQueue } from '../config';
-import { ErrorMessages } from '../common';
+import { Task, ITask } from '@/models';
+import { redisClient, logger, publishToQueue } from '@/config';
+import { ErrorMessages } from '@/common';
 
 const CACHE_EXPIRATION = 300;
 

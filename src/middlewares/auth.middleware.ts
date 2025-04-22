@@ -1,8 +1,7 @@
 import jwt, {JwtPayload} from 'jsonwebtoken';
 import { Request, Response, NextFunction } from "express";
-import { HTTP_CODES } from '../common/HTTP_CODES';
-import { ErrorMessages } from '../common/status_Message';
-import { logger} from '../config';
+import { HTTP_CODES, ErrorMessages } from '@/common';
+import { logger} from '@/config';
 
 interface DecodedUser extends JwtPayload {
   id: string;

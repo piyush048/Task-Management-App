@@ -1,6 +1,6 @@
 import amqp from 'amqplib';
 import { logger } from '../index';
-import { sendNotificationToUser } from '../../notifications';
+import { sendNotificationToUser } from '@/notifications';
 
 export const consumeTaskQueue = async (): Promise<void> => {
   try {

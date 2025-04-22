@@ -1,8 +1,8 @@
 import { Response, NextFunction } from 'express';
 import { AuthenticatedRequest } from './auth.middleware';
-import { ErrorMessages, HTTP_CODES } from '../common';
-import { userModel } from '../models';
-import {redisClient, logger } from '../config';
+import { ErrorMessages, HTTP_CODES } from '@/common';
+import { userModel } from '@/models';
+import {redisClient, logger } from '@/config';
 
 export const isAdmin = async (req: AuthenticatedRequest, res: Response, next: NextFunction): Promise<void> => {
   const userData = req.user;

@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as controller from '../controllers';
-import {authMiddleware, validate, isAdmin} from '../middlewares';
-import { createProjectSchema, updateProjectSchema } from '../validations';
+import * as controller from '@/controllers';
+import {authMiddleware, validate, isAdmin} from '@/middlewares';
+import { createProjectSchema, updateProjectSchema } from '@/validations';
 
 const projectRouter = Router();
 

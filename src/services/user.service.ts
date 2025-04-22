@@ -1,5 +1,5 @@
-import { logger } from '../config';
-import { IUser, userModel } from '../models';
+import { logger } from '@/config';
+import { IUser, userModel } from '@/models';
 
 export const getAllUsers = async () => {
   return await userModel.find().select('-password');

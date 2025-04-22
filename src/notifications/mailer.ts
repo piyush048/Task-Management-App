@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { logger } from '../config';
+import { logger } from '@/config';
 
 let transporter: nodemailer.Transporter;
 

@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import * as projectService from '../services';
-import { AuthenticatedRequest } from '../middlewares';
-import { IProject } from '../models';
-import { HTTP_CODES } from '../common';
+import * as projectService from '@/services';
+import { AuthenticatedRequest } from '@/middlewares';
+import { IProject } from '@/models';
+import { HTTP_CODES } from '@/common';
 
 
 export const create = async (req: AuthenticatedRequest, res: Response, next: NextFunction): Promise<void> => {

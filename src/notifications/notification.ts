@@ -1,6 +1,6 @@
-import { logger } from '../config';
+import { logger } from '@/config';
 import { sendEmail } from './mailer';
-import { getUserById } from '../services';
+import { getUserById } from '@/services';
 
 
 export const sendNotificationToUser = async (userId: string, message: string): Promise<void> => {

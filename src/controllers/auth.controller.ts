@@ -1,7 +1,7 @@
-import * as authservice from "../services";
+import * as authservice from "@/services";
 import { Request, Response, NextFunction } from "express";
-import { HTTP_CODES } from "../common";
-import { logger } from "../config";
+import { HTTP_CODES } from "@/common";
+import { logger } from "@/config";
 
 export const register = async (req : Request, res : Response, next : NextFunction): Promise<void> => {
     try {

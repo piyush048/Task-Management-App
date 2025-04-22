@@ -7,7 +7,7 @@
 
 /**
  * @swagger
- * /users/:
+ * api/v1/users/:
  *   get:
  *     summary: Get all users (Admin only)
  *     tags: [Users]
@@ -39,7 +39,7 @@
 
 /**
  * @swagger
- * /users/me:
+ * api/v1/users/me:
  *   get:
  *     summary: Get details of logged-in user's profile
  *     tags: [Users]
@@ -67,7 +67,7 @@
 
 /**
  * @swagger
- * /users/update:
+ * api/v1/users/update:
  *   patch:
  *     summary: Update logged-in user's profile
  *     tags: [Users]

@@ -7,7 +7,7 @@
 
 /**
  * @swagger
- * /tasks:
+ * api/v1/tasks:
  *   post:
  *     summary: Create a new task
  *     tags: [Tasks]
@@ -36,7 +36,7 @@
 
 /**
  * @swagger
- * /tasks:
+ * api/v1/tasks:
  *   get:
  *     summary: Get all tasks
  *     tags: [Tasks]
@@ -49,7 +49,7 @@
 
 /**
  * @swagger
- * /tasks/{id}:
+ * api/v1/tasks/{id}:
  *   get:
  *     summary: Get task by ID
  *     tags: [Tasks]
@@ -71,7 +71,7 @@
 
 /**
  * @swagger
- * /tasks/{id}:
+ * api/v1/tasks/{id}:
  *   patch:
  *     summary: Update task
  *     tags: [Tasks]
@@ -101,7 +101,7 @@
 
 /**
  * @swagger
- * /tasks/{id}:
+ * api/v1/tasks/{id}:
  *   delete:
  *     summary: Delete task
  *     tags: [Tasks]

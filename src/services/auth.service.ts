@@ -1,7 +1,7 @@
 import { userModel, IUser } from "../models";
 import jwt from "jsonwebtoken";
-import { hashPassword, comparePassword, ErrorMessages } from "../common";
-import { redisClient, logger } from "../config";
+import { hashPassword, comparePassword, ErrorMessages } from "@/common";
+import { redisClient, logger } from "@/config";
 
 const CACHE_EXPIRATION = 60 * 5;
 

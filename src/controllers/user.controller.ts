@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import * as userService from '../services';
+import * as userService from '@/services';
 
 interface IRequest extends Request {
     user?: any;

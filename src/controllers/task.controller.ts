@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import * as taskService from '../services';
-import { AuthenticatedRequest } from '../middlewares';
-import { ITask } from '../models';
+import * as taskService from '@/services';
+import { AuthenticatedRequest } from '@/middlewares';
+import { ITask } from '@/models';
 
 export const createTask = async (req: AuthenticatedRequest, res: Response, next: NextFunction): Promise<void> => {
   try {

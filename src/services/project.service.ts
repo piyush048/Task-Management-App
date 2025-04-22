@@ -1,7 +1,7 @@
-import { Project, IProject } from '../models';
-import { redisClient, logger, publishToQueue } from '../config';
-import { updateRedisProject } from '../utils';
-import { ErrorMessages } from '../common';
+import { Project, IProject } from '@/models';
+import { redisClient, logger, publishToQueue } from '@/config';
+import { updateRedisProject } from '@/utils';
+import { ErrorMessages } from '@/common';
 
 export const createProject = async (data: Partial<IProject>): Promise<IProject> => {
   const exitingProject = await Project.findOne({ name: data.name });

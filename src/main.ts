@@ -1,24 +1,19 @@
 import express, {Response, Request} from "express";
-import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import dotenv from "dotenv";
 dotenv.config();
-import { Authrouter, projectRouter, taskRouter, UserRouter } from "./routes";
-import { connectDB, redisClient, logger, connectRabbitMQ, swaggerSpec, consumeTaskQueue} from "./config";
-import { initializeMailer } from "./notifications";
+import routes from '@/routes';
+import { connectDB, redisClient, logger, connectRabbitMQ, swaggerSpec, consumeTaskQueue} from "@/config";
+import { initializeMailer } from "@/notifications";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use('/auth', Authrouter);
-app.use('/users', UserRouter);
-app.use('/projects', projectRouter);
-app.use('/tasks', taskRouter);
+app.use('/api', routes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 const startServer = async (): Promise<void> => {
   try {
     await connectDB();          

@@ -1,5 +1,5 @@
-import { redisClient } from "../config";
-import { IProject } from "../models";
+import { redisClient } from "@/config";
+import { IProject } from "@/models";
 
 export const updateRedisUser = async (userId: string, updates: Partial<{ role: string; name: string; email: string }>) => {
     const key = `user:${userId}`;

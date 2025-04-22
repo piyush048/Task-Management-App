@@ -7,7 +7,7 @@
 
 /**
  * @swagger
- * /projects:
+ * api/v1/projects:
  *   post:
  *     summary: Create a new project
  *     tags: [Projects]
@@ -31,7 +31,7 @@
 
 /**
  * @swagger
- * /projects:
+ * api/v1/projects:
  *   get:
  *     summary: Get all projects Admin's only
  *     tags: [Projects]
@@ -44,7 +44,7 @@
 
 /**
  * @swagger
- * /projects/{id}:
+ * api/v1/projects/{id}:
  *   get:
  *     summary: Get project by ID
  *     tags: [Projects]
@@ -66,7 +66,7 @@
 
 /**
  * @swagger
- * /projects/{id}:
+ * api/v1/projects/{id}:
  *   patch:
  *     summary: Update project
  *     tags: [Projects]
@@ -94,7 +94,7 @@
 
 /**
  * @swagger
- * /projects/{id}:
+ * api/v1/projects/{id}:
  *   delete:
  *     summary: Delete project
  *     tags: [Projects]
